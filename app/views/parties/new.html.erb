@@ -1,0 +1,34 @@
+party#new
+
+<%= form_for(@party) do |f| %>
+
+<div>
+<h4>お茶会名</h4>
+	<%= f.text_field :party_name %>
+</div>
+
+<div>
+<h4>日程</h4>
+	<%= f.text_field :event_date %>
+</div>
+
+<div>
+<h4>場所</h4>
+	<%= f.text_field :place %>
+</div>
+
+<div>
+<h4>内容</h4>
+	<%= f.text_field :contents %>
+</div>
+
+<div>
+<h4>カテゴリ名</h4>
+    <%= f.collection_select :category_id, Category.all, :id, :category_name %>
+</div>
+
+
+<div>
+	<%= f.submit "登録" %>
+
+<% end %>

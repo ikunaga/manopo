@@ -1,0 +1,8 @@
+カテゴリ一覧
+
+<% @category.each do |category| %>
+	<p><%= category.category_name %>
+	<%= link_to "削除" ,admin_category_path(category) ,method: :delete %></p>
+<% end %>
+
+<%= link_to "カテゴリを追加" ,"admin_categories/new" %>

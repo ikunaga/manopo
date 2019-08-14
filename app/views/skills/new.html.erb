@@ -1,0 +1,27 @@
+
+<%= form_for(@skill) do |f| %>
+    <div>
+        <h4>スキル</h4>
+	    <%= f.text_field :skill_name %>
+    </div>
+
+    <div>
+	    <h4>カテゴリーを選択</h4>
+	    <%= f.collection_select :category_id, Category.all, :id, :category_name %>
+	</div>
+
+	<div>
+		<%= f.submit "追加する" %>
+	</div>
+<% end %>
+
+
+<p>現在登録されているスキル</p>
+<div>
+
+	<% @skills.each do |skill| %>
+	<%= skill.skill_name %>
+	<%= link_to "削除", skill_path(skill), method: :delete %>
+	<% end %>
+
+</div>

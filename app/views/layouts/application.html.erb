@@ -2,14 +2,35 @@
 <html>
   <head>
     <title>Manopo</title>
+    <meta charset="UTF-8" />
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    　<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </head>
 
   <body>
+    <header style="width: 100%; height: 50px; background-color: gray;">
+      <p class=header1 style="font-size: 20px;">へっだー
+
+      <% if user_signed_in? %>
+        <%= link_to current_user.last_name, user_path(current_user.id) %></p>
+
+        <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+      <% else %>
+      <% end %>
+
+    </header>
+
+
     <%= yield %>
+
+
+    <footer style="width: 100%; height: 50px; background-color: gray;">
+      <p class=header1 style="font-size: 20px;">ふったー</p>
+
+    </footer>
   </body>
 </html>

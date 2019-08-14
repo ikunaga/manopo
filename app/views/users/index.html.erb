@@ -1,0 +1,26 @@
+<%= flash.now[:alert] %>
+
+<h4>topページ</h4>
+<div>
+	<% @users.each do |users| %>
+		<p><%= users.email %>
+			<%= link_to "詳細" ,user_path(users.id) %>
+		</p>
+		<div>
+			<%= attachment_image_tag users, :image, :fill, 500, 300, format: 'jpeg' %>
+		</div>
+	<% end %>
+</div>
+
+
+<div>
+	<h4>マッチング一覧</h4>
+	<% @user.each do |user| %>
+		<p><%= user.email %>
+			<%= link_to "詳細" ,user_path(user.id) %>
+		</p>
+		<div>
+			<%= attachment_image_tag user, :image, :fill, 500, 300, format: 'jpeg' %>
+		</div>
+	<% end %>
+</div>
