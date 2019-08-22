@@ -1,0 +1,16 @@
+
+<div>
+	<% @parties.each do |party| %>
+		<div>
+			<%= party.party_name %>
+			<%= party.event_date %>
+			<%= party.place %>
+			<%= party.contents %>
+			<%= User.find(party.organizer_user_id).name %>
+	        <%= party.category.category_name %>
+		</div>
+
+	<% end %>
+
+</div>
+

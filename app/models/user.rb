@@ -9,7 +9,14 @@ class User < ApplicationRecord
   has_many :skills, dependent: :destroy
   accepts_nested_attributes_for :skills, allow_destroy: true
 
+#chat機能
+  has_many :chat_messages
+  has_many :chatrooms, through: :chatroom_users
+  has_many :chatroom_users
 
+#party
+  has_many :parties, through: :user_parties
+  has_many :user_parties
 
 #follow機能
 

@@ -1,0 +1,38 @@
+<h4>お茶会編集</h4>
+
+<%= form_for(@party) do |f| %>
+
+<div>
+<h4>お茶会名</h4>
+	<%= f.text_field :party_name %>
+</div>
+
+<div>
+<h4>日程</h4>
+	<%= f.text_field :event_date %>
+</div>
+
+<div>
+<h4>場所</h4>
+	<%= f.text_field :place %>
+</div>
+
+<div>
+<h4>内容</h4>
+	<%= f.text_field :contents %>
+</div>
+
+<div>
+<h4>カテゴリ名</h4>
+    <%= f.collection_select :category_id, Category.all, :id, :category_name %>
+</div>
+
+<div>
+	<%= f.submit "更新" %>
+</div>
+
+<% end %>
+
+<h4>
+   <%= link_to "お茶会を削除する", party_path(@party), method: :delete %>
+</h4>

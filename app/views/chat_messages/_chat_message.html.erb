@@ -1,5 +1,5 @@
-<% cache chat_message do %>
-  <div class="message">
-    <p><%= chat_message.message %></p>
-  </div>
-<% end %>
+
+
+<div class="message">
+  <p><%= "#{chat_message.user.email}: #{chat_message.message}" %></p>
+</div>

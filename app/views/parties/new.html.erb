@@ -1,4 +1,4 @@
-party#new
+<h4>お茶会新規作成</h4>
 
 <%= form_for(@party) do |f| %>
 
@@ -27,8 +27,9 @@ party#new
     <%= f.collection_select :category_id, Category.all, :id, :category_name %>
 </div>
 
-
 <div>
 	<%= f.submit "登録" %>
+</div>
 
 <% end %>
+

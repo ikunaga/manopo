@@ -8,10 +8,17 @@ Rails.application.routes.draw do
     resources :users, only: [:index, :edit, :show, :update]
     resources :skills, only: [:new, :edit, :create, :update, :destroy]
     resources :relationships, only: [:create, :destroy]
-    resources :parties, only: [:new, :edit, :show, :create, :destroy]
 
-    get 'chat/', to: 'chats#show'
+    post '/userparty/:id', to: 'parties#user_party_create', as: 'user_party_create'
+    delete '/userparty/:id', to: 'parties#user_party_destroy', as: 'user_party_destroy'
+    resources :parties, only: [:new, :edit, :show, :index, :create, :destroy, :update]
 
+
+
+
+    get 'chatrooms/', to: 'chatrooms#index'
+
+    resources :chatrooms, only: %i[show]
 
 
 end

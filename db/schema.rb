@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_13_003909) do
+ActiveRecord::Schema.define(version: 2019_08_17_065454) do
 
   create_table "categories", force: :cascade do |t|
     t.string "category_name", null: false
@@ -22,6 +22,10 @@ ActiveRecord::Schema.define(version: 2019_08_13_003909) do
     t.string "message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.integer "chatroom_id"
+    t.index ["chatroom_id"], name: "index_chat_messages_on_chatroom_id"
+    t.index ["user_id"], name: "index_chat_messages_on_user_id"
   end
 
   create_table "chatroom_users", force: :cascade do |t|
@@ -66,10 +70,12 @@ ActiveRecord::Schema.define(version: 2019_08_13_003909) do
   end
 
   create_table "user_parties", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "party_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.integer "party_id"
+    t.index ["party_id"], name: "index_user_parties_on_party_id"
+    t.index ["user_id"], name: "index_user_parties_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

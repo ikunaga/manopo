@@ -1,36 +1,38 @@
-<div class="container-fluid bg-info" style="text-align: center; width: 100%;">
+<div style="text-align: center; width: 100%; background-image: url(<%= image_path("memo2.jpg") %>); height: 800px;">
   <div class="row">
     <div class="log-in">
         <div class="space" style="margin: 40px 0;"></div>
         <h2  style="font-family: 'Hannari';">ログイン</h2>
 
-        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-          <div class="form-inline">
-            <%= f.label :メールアドレス %><br />
-            <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-          </div>
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <div class="form-inline">
+              <%= f.label :メールアドレス %><br />
+              <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+            </div>
 
-          <div class="field">
-            <%= f.label :パスワード %><br />
-            <%= f.password_field :password, autocomplete: "current-password" %>
-          </div>
+            <div class="field">
+              <%= f.label :パスワード %><br />
+              <%= f.password_field :password, autocomplete: "current-password" %>
+            </div>
 
-          <% if devise_mapping.rememberable? %>
-            <div style="margin: 10px 0;">
-              <%= f.check_box :remember_me %>
-              <%= f.label :次回から自動で入力 %>
+            <% if devise_mapping.rememberable? %>
+              <div style="margin: 10px 0;">
+                <%= f.check_box :remember_me %>
+                <%= f.label :次回から自動で入力 %>
+              </div>
+            <% end %>
+
+            <div class="actions">
+              <%= f.submit "Log in" %>
             </div>
           <% end %>
-
-          <div class="actions">
-            <%= f.submit "Log in" %>
-          </div>
-        <% end %>
-
         <%= render "devise/shared/links" %>
         <div class="space" style="margin: 40px 0;"></div>
     </div>
   </div>
 </div>
+<div>
+    <%= image_tag 'old.jpg', size:'800x500' %>
+  </div>
 
 <%= flash[:notice] %>

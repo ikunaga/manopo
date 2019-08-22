@@ -1,0 +1,53 @@
+<h4>お茶会詳細ページ</h4>
+
+<div>
+	<h5>お茶会名</h5>
+	<%= @party.party_name %>
+</div>
+
+<div>
+	<h5>日程</h5>
+	<%= @party.event_date %>
+</div>
+
+<div>
+	<h5>場所</h5>
+	<%= @party.place %>
+</div>
+
+<div>
+	<h5>内容</h5>
+	<%= @party.contents %>
+</div>
+
+<div>
+	<h5>主催者</h5>
+	<%= @party.organizer_user_id %>
+</div>
+
+<div>
+	<h5>カテゴリ</h5>
+	<%= @party.category_id %>
+</div>
+
+<div>
+	<% if @party.organizer_user_id == current_user.id %>
+	<%= link_to "編集" ,edit_party_path(@party.id) %>
+	<% end %>
+</div>
+
+<div>
+	<% if @party.user_parties_by?(current_user) %>
+		<%= link_to '参加をキャンセルする', user_party_destroy_path(@party.id) ,method: :delete %>
+	<% else %>
+		<%= link_to '参加する', user_party_create_path(@party.id) ,method: :post %>
+	<% end %>
+</div>
+
+
+<div>
+	<h4>参加者一覧</h4>
+		<% @party.user_parties.each do |user_party| %>
+			<%= user_party.user.name %>
+		<% end %>
+</div>

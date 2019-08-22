@@ -1,0 +1,9 @@
+<h4>Chat room</h4>
+
+<div id="messages" data-room_id="<%= @room.id %>">
+  <%= render @messages %>
+</div>
+
+
+<%= label nil, nil, 'Say something:' %>
+<%= text_field nil, @room.id, 'data-behavior': 'chat_speaker' %>

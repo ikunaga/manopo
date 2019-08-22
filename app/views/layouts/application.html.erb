@@ -12,25 +12,56 @@
   </head>
 
   <body>
-    <header style="width: 100%; height: 50px; background-color: gray;">
-      <p class=header1 style="font-size: 20px;">へっだー
+      <header style="width: 100%; height: 70px; border-top: 2px; ">
+        <div style="margin: auto; width: 120px;">
+          <a href="/"><%= image_tag 'logo.png', size:'110x70' %></a>
+        </div>
 
-      <% if user_signed_in? %>
-        <%= link_to current_user.last_name, user_path(current_user.id) %></p>
 
-        <li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
-      <% else %>
-      <% end %>
+      </header>
+        <% if user_signed_in? %>
+          <nav>
+            <ul style="background-color: #f4a460;">
+              <li style="list-style: none;">
+                <a href="/">home</a>
+              </li>
 
-    </header>
+              <li style="list-style: none;">
+                <%= link_to current_user.last_name, user_path(current_user.id) %>
+              </li>
+
+              <li style="list-style: none;">
+                <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+              </li>
+            </ul>
+          </nav>
+
+        <% else %>
+          <nav>
+              <ul style="border: 2px; float: left; width: 100%;">
+                  <div style="width: 500px; margin: auto;">
+                      <li style="list-style: none; width: 100px; float: left; margin-left: 100px;">
+                        <%=link_to "_Sign Up", new_user_registration_path, class: "glyphicon glyphicon-log-in , text-muted" %></li>
+                      <li style="list-style: none; width: 100px; float: left; margin-left: 100px;">
+                        <%=link_to "_Log In", new_user_session_path, class: "glyphicon glyphicon-home , text-muted" %></li>
+                  </div>
+              </ul>
+          </nav>
+        <% end %>
 
 
     <%= yield %>
 
+    <div style="min-height: 100vh; position: relative; padding-bottom: 120px; box-sizing: border-box;">
+      <footer style="width: 100%; background-color: #fffacd; padding: 50px 0; position: absolute; bottom: 0;">
+        <div style="font-size: 10px;">
+          Mano po（マノポー）とは...<br>
+          Mano po（マノポー）とは、フィリピンで子どもや若者が年長の親戚に会った際に、<br>
+          敬意を払って行う挨拶のことである。<br>
+          このサイトがきっかけで日本でも若者がお年寄りに敬意を払って接するように
+        </div>
+      </footer>
+    </div>
 
-    <footer style="width: 100%; height: 50px; background-color: gray;">
-      <p class=header1 style="font-size: 20px;">ふったー</p>
-
-    </footer>
   </body>
 </html>

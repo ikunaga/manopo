@@ -5,6 +5,20 @@ class RelationshipsController < ApplicationController
     following = current_user.follow(user)
     if following.save
       flash[:success] = 'ユーザーをフォローしました'
+      #chatroom作成
+      chatroom = Chatroom.new
+      chatroom.save
+      #chatroom_user作成(current_user)
+      chatroom_user = ChatroomUser.new
+      chatroom_user.chatroom_id = chatroom.id
+      chatroom_user.user_id = current_user.id
+      chatroom_user.save!
+      #chatroom_user作成(フォローされた側)
+      chatroom_user = ChatroomUser.new
+      chatroom_user.chatroom_id = chatroom.id
+      chatroom_user.user_id = user.id
+      chatroom_user.save!
+
       redirect_to user
     else
       flash.now[:alert] = 'ユーザーのフォローに失敗しました'
