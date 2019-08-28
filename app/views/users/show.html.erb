@@ -21,16 +21,33 @@
 		</div>
 	</div>
 
-	<div>
+
+	<div class="clearfix" style="margin-left: 20px; margin-top: 50px;">
+			<% if current_user.age_group == '若者' %>
+				<h4>興味のあるスキル（カテゴリ/スキル内容）</h4>
+			<% else current_user.age_group == 'シニア' %>
+				<h4>保有スキル（カテゴリ/スキル内容）</h4>
+			<% end %>
+		<div style="margin-top: 30px;">
+			<% @user.skills.each do |skill| %>
+				<div style="border: 1px solid; width: 100px; text-align: center; float: left; margin-left: 20px;">
+					<h4><%= skill.category.category_name %></h4>
+					<p><%= skill.skill_name %></p>
+				</div>
+			<% end %>
+		</div>
+	</div>
+
+	<div style="margin-top: 50px;">
 		<%= flash[:success] %>
 		<%= render "relationships/follow_button", user: @user %>
     </div>
 
-    <div>
-    	<% if @user == current_user %>
+   	<% if @user == current_user %>
+	    <div>
 			<button type="button" class="btn btn-default" style="width: 100px;"><%= link_to "編集" ,edit_user_path(@user.id) %></button>
-		<% end %>
-	</div>
+		</div>
+	<% end %>
 
 </div>
 

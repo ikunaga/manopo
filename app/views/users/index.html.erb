@@ -4,18 +4,48 @@
 
 
 <div  class="index clearfix" style="width: 200px; height: 3000px; float: left; margin-right: 30px; border-right: 2px solid black; padding-top: 50px; background-color: #f5f5f5;">
-	<!-- <img src="assets/man.jpg" width="200px" height="200px"> -->
+	<div style="margin-top: 50px;">
+		<h4 style="text-align: center;">サイト利用の心得</h4>
+		<h5 style="text-align: center; padding-top: 20px;">その一、</h5>
+		<h6 style="text-align: center;">自己紹介は詳細に書くべし</h6>
+		<p style="font-size: 10px;">自己紹介が長い人ほどいいねを受けやすいというデータがあります。自己紹介はなるべく詳細に、文字数を多く書くようにしましょう。</p>
+
+		<h5 style="text-align: center; padding-top: 50px;">その二、</h5>
+		<h6 style="text-align: center;">スキルをなるべく多く登録すべし</h6>
+		<p style="font-size: 10px;">おすすめユーザーには自分が登録しているスキルと同じカテゴリのスキルを保有しているユーザーのみ表示されるようになっています。そのため、少しでも興味のあることについては登録しておきましょう。</p>
+
+		<h5 style="text-align: center; padding-top: 50px;">その三、</h5>
+		<h6 style="text-align: center;">積極的にいいねすべし</h6>
+		<p style="font-size: 10px;">お互いにいいねをし合うとマッチングが成立し、チャットが開始できるようになります。チャットをしてみると新しいことに興味を持つきっかけになるかもしれません。少しでも興味を持った人には積極的にいいねをし、チャットで会話をしましょう。</p>
+
+<!-- 石畳 -->
+		<div style="text-align: center;">
+			<span class="glyphicon glyphicon-bell" aria-hidden="true" style="margin-top: 150px;"></span>
+			<p><span class="glyphicon glyphicon-bell" aria-hidden="true" style="margin-top: 200px;"></span></p>
+			<p><span class="glyphicon glyphicon-bell" aria-hidden="true" style="margin-top: 200px;"></span></p>
+			<p><span class="glyphicon glyphicon-bell" aria-hidden="true" style="margin-top: 200px;"></span></p>
+			<p><span class="glyphicon glyphicon-bell" aria-hidden="true" style="margin-top: 200px;"></span></p>
+			<p><span class="glyphicon glyphicon-bell" aria-hidden="true" style="margin-top: 200px;"></span></p>
+			<p><span class="glyphicon glyphicon-bell" aria-hidden="true" style="margin-top: 200px;"></span></p>
+			<p><span class="glyphicon glyphicon-bell" aria-hidden="true" style="margin-top: 200px;"></span></p>
+			<p><span class="glyphicon glyphicon-bell" aria-hidden="true" style="margin-top: 200px;"></span></p>
+			<p><span class="glyphicon glyphicon-bell" aria-hidden="true" style="margin-top: 200px;"></span></p>
+		</div>
+
+	</div>
+
 </div>
 
 <div style="text-align: center; width: 100%; background-image: url(<%= image_path("man.jpg") %>); background-position: center; background-size: contain; height: 250px;">
 </div>
+
 
 <section class="our-webcoderskull padding-lg">
   <div class="container" style="float: left;">
     <div class="row heading heading-icon" style="text-align: center; padding-bottom: 40px;">
         <h2>おすすめユーザー</h2>
         <p style="font-size: 15px;">こちらには、あなたが登録しているスキルのカテゴリーに通じるユーザーが表示されます。<br>
-           ユーザーの名前をクリックして詳細ページに移動し、話したいと思ったユーザーにいいねを押してください。</p>
+           ユーザーの名前をクリックして詳細ページに移動(名前をクリック)し、話したいと思ったユーザーにいいねを押してください。</p>
     </div>
 	    <ul class="row">
 	    <% @users.each do |users| %>
@@ -37,7 +67,6 @@
 	            <% else %>
 	            	<h5> </h5>
 	            <% end %>
-
 	          </div>
 	      </li>
 	    <% end %>
