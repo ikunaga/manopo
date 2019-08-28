@@ -3,7 +3,7 @@
 
 
 
-<div  class="index clearfix" style="width: 200px; height: 3000px; float: left; margin-right: 30px; border-right: 2px solid black; padding-top: 50px; background-color: #f5f5f5;">
+<div  class="index clearfix" style="width: 200px; height: 100%; float: left; margin-right: 30px; border-right: 2px solid black; padding-top: 20px; background-color: #f5f5f5; position: fixed; margin-top: 40px;">
 	<div style="margin-top: 50px;">
 		<h4 style="text-align: center;">サイト利用の心得</h4>
 		<h5 style="text-align: center; padding-top: 20px;">その一、</h5>
@@ -18,30 +18,16 @@
 		<h6 style="text-align: center;">積極的にいいねすべし</h6>
 		<p style="font-size: 10px;">お互いにいいねをし合うとマッチングが成立し、チャットが開始できるようになります。チャットをしてみると新しいことに興味を持つきっかけになるかもしれません。少しでも興味を持った人には積極的にいいねをし、チャットで会話をしましょう。</p>
 
-<!-- 石畳 -->
-		<div style="text-align: center;">
-			<span class="glyphicon glyphicon-bell" aria-hidden="true" style="margin-top: 150px;"></span>
-			<p><span class="glyphicon glyphicon-bell" aria-hidden="true" style="margin-top: 200px;"></span></p>
-			<p><span class="glyphicon glyphicon-bell" aria-hidden="true" style="margin-top: 200px;"></span></p>
-			<p><span class="glyphicon glyphicon-bell" aria-hidden="true" style="margin-top: 200px;"></span></p>
-			<p><span class="glyphicon glyphicon-bell" aria-hidden="true" style="margin-top: 200px;"></span></p>
-			<p><span class="glyphicon glyphicon-bell" aria-hidden="true" style="margin-top: 200px;"></span></p>
-			<p><span class="glyphicon glyphicon-bell" aria-hidden="true" style="margin-top: 200px;"></span></p>
-			<p><span class="glyphicon glyphicon-bell" aria-hidden="true" style="margin-top: 200px;"></span></p>
-			<p><span class="glyphicon glyphicon-bell" aria-hidden="true" style="margin-top: 200px;"></span></p>
-			<p><span class="glyphicon glyphicon-bell" aria-hidden="true" style="margin-top: 200px;"></span></p>
-		</div>
-
 	</div>
 
 </div>
 
-<div style="text-align: center; width: 100%; background-image: url(<%= image_path("images/man.jpg") %>); background-position: center; background-size: contain; height: 250px;">
+<div style="text-align: center; width: 100%; background-image: url(<%= image_path("man.jpg") %>); background-position: center; background-size: contain; height: 250px;">
 </div>
 
 
 <section class="our-webcoderskull padding-lg">
-  <div class="container" style="float: left;">
+  <div class="container" style="float: left; margin-left: 200px;">
     <div class="row heading heading-icon" style="text-align: center; padding-bottom: 40px;">
         <h2>おすすめユーザー</h2>
         <p style="font-size: 15px;">こちらには、あなたが登録しているスキルのカテゴリーに通じるユーザーが表示されます。<br>
@@ -49,8 +35,8 @@
     </div>
 	    <ul class="row">
 	    <% @users.each do |users| %>
-	      <li class="col-12 col-md-6 col-lg-3">
-	          <div class="cnt-block equal-hight" style="height: 350px;">
+	      <li class="col-12 col-md-6 col-lg-3" style="position: static;">
+	          <div class="clearfix cnt-block equal-hight" style="height: 350px;">
 	            <figure><img src="<%= attachment_url(users, :image, :fill, 600, 600) %>"></figure>
 	            <h3><a href="<%= user_path(users.id) %>"><%= users.first_name %> <%= users.last_name %></a></h3>
 
@@ -77,16 +63,16 @@
 
 
 
-<section class="our-webcoderskull padding-lg">
+<section class="our-webcoderskull padding-lg" style="margin-left: 200px;">
   <div class="container" style="float: left;">
-    <div class="row heading heading-icon" style="text-align: center; padding-bottom: 40px;">
+    <div class="row heading heading-icon" style="text-align: center; padding-bottom: 40px; ">
         <h2>マッチング一覧</h2>
         <p style="font-size: 15px;">こちらには、お互いにいいねがされ、マッチングが成立したユーザーの一覧が表示されます。<br>
            「チャットをする」をクリックし、チャットを開始してください。</p>
     </div>
 	    <ul class="row">
 	    <% @chatroom_with_follower.each do |chatuser| %>
-	      <li class="col-12 col-md-6 col-lg-3">
+	      <li class="col-12 col-md-6 col-lg-3" style="position: static;">
 	          <div class="cnt-block equal-hight" style="height: 349px;">
 	            <figure><img src="<%= attachment_url(chatuser[:follower_user], :image, :fill, 600, 600) %>"></figure>
 	            <h3><a href="<%= user_path(chatuser[:follower_user]) %>"><%= chatuser[:follower_user].first_name %> <%= chatuser[:follower_user].last_name %></a></h3>
