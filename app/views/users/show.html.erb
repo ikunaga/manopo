@@ -1,16 +1,37 @@
-<h4>ユーザー詳細</h4>
+<div class="clearfix" style="margin-top: 60px; margin-left: 200px;">
+	<div class="clearfix">
+		<div>
+			<h1><%= @user.first_name %> <%= @user.last_name %> (<%= @user.first_name_kana %> <%= @user.last_name_kana %>)</h1>
+		</div>
 
-	<div style="width: 100%;">
-		<%= attachment_image_tag @user, :image, :fill, 500, 300, format: 'jpeg' %>
+		<div class="clearfix" style="float: left; margin-top: 30px;">
+			<img style="width: 500px;" src="<%= attachment_url(@user, :image, :fill, 720, 500, format: 'jpeg') %>">
+		</div>
+
+		<div class="clearfix" style="float:left; margin-left: 100px; margin-top: 30px;">
+			<h4>居住地:</h4>
+			<h4>年齢:</h4>
+			<h4>自己紹介:</h4>
+		</div>
+
+		<div class="clearfix" style="float:left; margin-left: 20px; margin-top: 30px;">
+			<h4><%= @user.location %></h4>
+			<h4><%= @user.age %></h4>
+			<h4><%= @user.introduction %></h4>
+		</div>
 	</div>
-<%= @user.email %>
-<div>
-<%= flash[:success] %>
+
+	<div>
+		<%= flash[:success] %>
+		<%= render "relationships/follow_button", user: @user %>
+    </div>
+
+    <div>
+    	<% if @user == current_user %>
+			<button type="button" class="btn btn-default" style="width: 100px;"><%= link_to "編集" ,edit_user_path(@user.id) %></button>
+		<% end %>
+	</div>
+
 </div>
-<%= render "relationships/follow_button", user: @user %>
 
-
-<% if @user == current_user %>
-<%= link_to "編集" ,edit_user_path(@user.id) %>
-<% end %>
 

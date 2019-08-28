@@ -18,7 +18,7 @@ end
   protected
 
     def configure_permitted_parameters
-      devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :last_name, :first_name, :last_name_kana, :first_name_kana, :location, :image, :age, :address, :phone_number, :age_group, skills_attributes: [:id, :skill_name, :category_id, :destroy], ])
+      devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :last_name, :first_name, :last_name_kana, :first_name_kana, :location, :image, :age, :address, :phone_number, :age_group, :introduction, skills_attributes: [:id, :skill_name, :category_id, :destroy], ])
     end
 end
 

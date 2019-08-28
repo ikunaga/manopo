@@ -1,38 +1,64 @@
-<div style="text-align: center; width: 100%; background-image: url(<%= image_path("memo2.jpg") %>); height: 800px;">
+<div style="text-align: center; width: 100%; background-image: url(<%= image_path("hat2.jpg") %>); background-size: cover; height: 500px; background-position: bottom;">
   <div class="row">
-    <div class="log-in">
-        <div class="space" style="margin: 40px 0;"></div>
-        <h2  style="font-family: 'Hannari';">ログイン</h2>
+    <div class="log-in" style="margin-top: 100px; padding-right: 1000px;">
+        <div class="space"></div>
+        <h1  style="color: white;">ログイン</h1>
 
           <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
             <div class="form-inline">
-              <%= f.label :メールアドレス %><br />
+              <h5 style="color: white;">メールアドレス</h5>
               <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
             </div>
 
             <div class="field">
-              <%= f.label :パスワード %><br />
+              <h5 style="color: white;">パスワード</h5>
               <%= f.password_field :password, autocomplete: "current-password" %>
             </div>
 
-            <% if devise_mapping.rememberable? %>
-              <div style="margin: 10px 0;">
+<!--             <% if devise_mapping.rememberable? %>
+              <div style="margin: 10px 0; color: white;">
                 <%= f.check_box :remember_me %>
                 <%= f.label :次回から自動で入力 %>
               </div>
-            <% end %>
+            <% end %> -->
 
-            <div class="actions">
-              <%= f.submit "Log in" %>
+            <div class="actions" style="color: blue; margin-top: 20px; font-size: 15px;">
+              <%= f.submit "ログイン" %>
             </div>
           <% end %>
-        <%= render "devise/shared/links" %>
+<!--         <%= render "devise/shared/links" %> -->
         <div class="space" style="margin: 40px 0;"></div>
     </div>
   </div>
 </div>
-<div>
-    <%= image_tag 'old.jpg', size:'800x500' %>
-  </div>
+
+<div style="text-align: center; margin-top: 80px;">
+  <h3>このサイト「Mano Po(マノポー)」について</h3>
+  <p>このサイトは、仕事を退職した後も培ったスキルや経験を生かしたいと考えているシニア（中高年の方々）と<br>
+    その知識を学びたいと考えている若者とを結びつけるマッチングサイトです。</p>
+</div>
+
+<div style="text-align: center; margin-top: 60px;">
+  <h3>サイトの使い方</h3>
+  <h4>STEP１</h4>
+  <h5>会員登録</h5>
+  <p><a href="/users/sign_up">会員登録ページ</a>より、会員登録を行ってください。<br>
+    その際に、「<strong style="color: #d2691e; font-size: 15px;">シニア</strong>（若者に知識を還元したいと考えている方）」か<br>
+  「<strong style="color: #191970; font-size: 15px;">若者</strong>（シニアの知識を学びたいと考えている方）」を選択してください。</p>
+
+  <h4 style="padding-top: 30px;">STEP２</h4>
+  <h5>自分が話してみたい相手を探す</h5>
+  <p>会員登録が完了したら、本ページ上部のログインフォームからメールアドレスとパスワードを入力してログインします。<br>
+    ログインした後に、登録したカテゴリのスキルをもった方、学びたいと思っている方を<br>
+    それぞれカテゴリ一覧から確認し、話したいと思った相手に＜いいね＞をしてください。</p>
+
+  <h4 style="padding-top: 30px;">STEP３</h4>
+  <h5>マッチングした相手とメッセージをやりとりする</h5>
+  <p>お互いに＜いいね＞を行った場合、マッチング成立となりメッセージのやりとりができるようになります。<br>
+  お互いに節度をもって、メッセージのやりとりを行ってください。</p>
+
+
+</div>
+
 
 <%= flash[:notice] %>

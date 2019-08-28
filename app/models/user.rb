@@ -1,29 +1,36 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+
+#device
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   attachment :image
-  enum age_group: {先輩:0, 後輩:1}
+  enum age_group: {シニア:0, 若者:1}
 
-  has_many :skills, dependent: :destroy
-  accepts_nested_attributes_for :skills, allow_destroy: true
 
 #chat機能
   has_many :chat_messages
-  has_many :chatrooms, through: :chatroom_users
   has_many :chatroom_users
+  has_many :chatrooms, through: :chatroom_users
 
 #party
   has_many :parties, through: :user_parties
   has_many :user_parties
 
 #follow機能
-
   has_many :relationships
   has_many :followings, through: :relationships, source: :follow
   has_many :reverse_of_relationships, class_name: 'Relationship', foreign_key: 'follow_id'
   has_many :followers, through: :reverse_of_relationships, source: :user
+
+#skill
+  has_many :skills
+  has_many :categories, through: :skills
+
+
+
+
 
 
 	def follow(other_user)

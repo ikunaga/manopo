@@ -12,53 +12,46 @@
   </head>
 
   <body>
-      <header style="width: 100%; height: 70px; border-top: 2px; ">
-        <div style="margin: auto; width: 120px;">
-          <a href="/"><%= image_tag 'logo.png', size:'110x70' %></a>
-        </div>
+    <script src="jquery-4.3.5.min.js"></script>
+      <header  class="clearfix" style="width: 100%; height: 60px; background-color: white; padding-top: 0; margin-top: 0;position: absolute; top: 0;">
+<!--         <a style="float: left; margin-left: 100px;" href="/"><%= image_tag 'logo.png', size:'100x60' %></a>
+ -->
+            <a href="/" style="color: black;"><h2 style="font-family: cursive; float: left; padding-left: 50px;">Mano Po</h3></a>
+          <% if user_signed_in? %>
+                <ul class="clearfix" style="margin-top: 30px; float: left;">
+                        <li style="list-style: none; float: left; margin-left: 800px;">
+                          <%= link_to "　マイページ", user_path(current_user.id), class: "glyphicon glyphicon-home , text-muted" %></li>
+                        <li style="list-style: none; float: left; margin-left: 20px;">
+                          <%= link_to "　ログアウト", destroy_user_session_path, :method => :delete, class: "glyphicon glyphicon-log-out , text-muted" %></li>
+                        <li style="list-style: none; float: left; margin-left: 20px;">
+                          <%= link_to "　チャット", chatrooms_path, class: "glyphicon glyphicon-user , text-muted" %></li>
+                </ul>
 
+
+          <% else %>
+
+                <ul class="clearfix" style="margin-top: 30px; float: left;">
+                        <li style="list-style: none; float: left; margin-left: 900px;">
+                          <%=link_to "_会員登録", new_user_registration_path, class: "glyphicon glyphicon-log-in , text-muted" %></li>
+                        <li style="list-style: none; float: left; margin-left: 50px;">
+                          <%=link_to "_ログイン", new_user_session_path, class: "glyphicon glyphicon-home , text-muted" %></li>
+                </ul>
+          <% end %>
 
       </header>
-        <% if user_signed_in? %>
-          <nav>
-            <ul style="background-color: #f4a460;">
-              <li style="list-style: none;">
-                <a href="/">home</a>
-              </li>
-
-              <li style="list-style: none;">
-                <%= link_to current_user.last_name, user_path(current_user.id) %>
-              </li>
-
-              <li style="list-style: none;">
-                <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
-              </li>
-            </ul>
-          </nav>
-
-        <% else %>
-          <nav>
-              <ul style="border: 2px; float: left; width: 100%;">
-                  <div style="width: 500px; margin: auto;">
-                      <li style="list-style: none; width: 100px; float: left; margin-left: 100px;">
-                        <%=link_to "_Sign Up", new_user_registration_path, class: "glyphicon glyphicon-log-in , text-muted" %></li>
-                      <li style="list-style: none; width: 100px; float: left; margin-left: 100px;">
-                        <%=link_to "_Log In", new_user_session_path, class: "glyphicon glyphicon-home , text-muted" %></li>
-                  </div>
-              </ul>
-          </nav>
-        <% end %>
 
 
     <%= yield %>
-
-    <div style="min-height: 100vh; position: relative; padding-bottom: 120px; box-sizing: border-box;">
-      <footer style="width: 100%; background-color: #fffacd; padding: 50px 0; position: absolute; bottom: 0;">
-        <div style="font-size: 10px;">
-          Mano po（マノポー）とは...<br>
-          Mano po（マノポー）とは、フィリピンで子どもや若者が年長の親戚に会った際に、<br>
-          敬意を払って行う挨拶のことである。<br>
-          このサイトがきっかけで日本でも若者がお年寄りに敬意を払って接するように
+<div class="clearfix" style="margin-top: 150px;"></div>
+    <div class=clearfix style="box-sizing: border-box;">
+      <footer class="clearfix" style="width: 100%; background-color: #c0c0c0; padding: 10px 0; bottom: 0;">
+        <div style="font-size: 12px; padding-left: 180px; color: white; float: left;">
+          <h4>Mano po（マノポー）とは</h3>
+          <p>Mano po（マノポー）とは、フィリピンで子どもや若者が年長の親戚に会った際に、敬意を払って行う挨拶のことである。<br>
+          このサイトがきっかけで、日本でも年上の方々に敬意をもって接する気持ちが今以上に強くなりますように。</p>
+        </div>
+        <div style="float: left; margin-left: 150px; margin-top: 50px; color: white;">
+          <p>© All rights reserved by Infratop.Inc.</p>
         </div>
       </footer>
     </div>

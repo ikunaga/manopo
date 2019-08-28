@@ -1,4 +1,4 @@
-<div class="container-fluid bg-info" style="text-align: center; width: 100%;">
+<div style="text-align: center; width: 100%; margin-top: 50px;">
   <div class="row">
     <div class="log-in">
 
@@ -69,12 +69,12 @@
         <div class="field">
         <%= f.label :年齢層 %><br />
           <div class="radio-inline">
-            <%= f.radio_button :age_group, :先輩, checked: "checked" %>
-            <%= f.label :先輩, class: "job_type_label" %>
+            <%= f.radio_button :age_group, :シニア, checked: "checked" %>
+            <%= f.label :シニア, class: "job_type_label" %>
           </div>
           <div class="radio-inline">
-          　<%= f.radio_button :age_group, :後輩 %>
-            <%= f.label :後輩, class: "job_type_label" %>
+          　<%= f.radio_button :age_group, :若者 %>
+            <%= f.label :若者, class: "job_type_label" %>
           </div>
         </div>
 
@@ -88,7 +88,10 @@
           <%= f.text_field :phone_number %>
         </div>
 
-
+        <div class="field">
+          <%= f.label :自己紹介 %><br />
+          <%= f.text_area :introduction %>
+        </div>
 
         <div class="actions">
           <%= f.submit "更新する" %>

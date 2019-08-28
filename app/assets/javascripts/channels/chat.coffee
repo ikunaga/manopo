@@ -8,6 +8,7 @@ document.addEventListener 'turbolinks:load', ->
 
   received: (data) ->
     $('#messages').append data['chat_message']
+    alert('test')
 
   post: (chat_message, chatroom_id)->
     @perform 'post', chat_message: chat_message, chatroom_id: chatroom_id

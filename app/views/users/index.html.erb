@@ -1,26 +1,88 @@
 <%= flash.now[:alert] %>
 
-<h4>topページ</h4>
-<div>
-	<% @users.each do |users| %>
-		<p><%= users.email %>
-			<%= link_to "詳細" ,user_path(users.id) %>
-		</p>
-		<div>
-			<%= attachment_image_tag users, :image, :fill, 500, 300, format: 'jpeg' %>
-		</div>
-	<% end %>
-</div>
 
 
-<div>
-	<h4>マッチング一覧</h4>
-	<% @user.each do |user| %>
-		<p><%= user.email %>
-			<%= link_to "詳細" ,user_path(user.id) %>
-		</p>
-		<div>
-			<%= attachment_image_tag user, :image, :fill, 500, 300, format: 'jpeg' %>
-		</div>
-	<% end %>
+
+<div  class="index clearfix" style="width: 200px; height: 3000px; float: left; margin-right: 30px; border-right: 2px solid black; padding-top: 50px; background-color: #f5f5f5;">
+	<!-- <img src="assets/man.jpg" width="200px" height="200px"> -->
 </div>
+
+<div style="text-align: center; width: 100%; background-image: url(<%= image_path("man.jpg") %>); background-position: center; background-size: contain; height: 250px;">
+</div>
+
+<section class="our-webcoderskull padding-lg">
+  <div class="container" style="float: left;">
+    <div class="row heading heading-icon" style="text-align: center; padding-bottom: 40px;">
+        <h2>おすすめユーザー</h2>
+        <p style="font-size: 15px;">こちらには、あなたが登録しているスキルのカテゴリーに通じるユーザーが表示されます。<br>
+           ユーザーの名前をクリックして詳細ページに移動し、話したいと思ったユーザーにいいねを押してください。</p>
+    </div>
+	    <ul class="row">
+	    <% @users.each do |users| %>
+	      <li class="col-12 col-md-6 col-lg-3">
+	          <div class="cnt-block equal-hight" style="height: 350px;">
+	            <figure><img src="<%= attachment_url(users, :image, :fill, 600, 600) %>"></figure>
+	            <h3><a href="<%= user_path(users.id) %>"><%= users.first_name %> <%= users.last_name %></a></h3>
+
+        		<% if current_user.age_group == '若者' %>
+		            <h5>保有スキル</h5>
+		            <% users.skills.each do |skill| %>
+		               <%= skill.skill_name %>
+		            <% end %>
+		        <% elsif current_user.age_group == 'シニア' %>
+		        	<h5>興味のあるスキル</h5>
+		            <% users.skills.each do |skill| %>
+		               <%= skill.skill_name %>
+	            	<% end %>
+	            <% else %>
+	            	<h5> </h5>
+	            <% end %>
+
+	          </div>
+	      </li>
+	    <% end %>
+	    </ul>
+  </div>
+</section>
+
+
+
+
+<section class="our-webcoderskull padding-lg">
+  <div class="container" style="float: left;">
+    <div class="row heading heading-icon" style="text-align: center; padding-bottom: 40px;">
+        <h2>マッチング一覧</h2>
+        <p style="font-size: 15px;">こちらには、お互いにいいねがされ、マッチングが成立したユーザーの一覧が表示されます。<br>
+           「チャットをする」をクリックし、チャットを開始してください。</p>
+    </div>
+	    <ul class="row">
+	    <% @chatroom_with_follower.each do |chatuser| %>
+	      <li class="col-12 col-md-6 col-lg-3">
+	          <div class="cnt-block equal-hight" style="height: 349px;">
+	            <figure><img src="<%= attachment_url(chatuser[:follower_user], :image, :fill, 600, 600) %>"></figure>
+	            <h3><a href="<%= user_path(chatuser[:follower_user]) %>"><%= chatuser[:follower_user].first_name %> <%= chatuser[:follower_user].last_name %></a></h3>
+
+        		<% if current_user.age_group == '若者' %>
+		            <h5>保有スキル</h5>
+		            <% chatuser[:follower_user].skills.each do |skill| %>
+		               <%= skill.skill_name %>
+	            	<% end %>
+
+		        <% elsif current_user.age_group == 'シニア' %>
+		        	<h5>興味のあるスキル</h5>
+		            <% chatuser[:follower_user].skills.each do |skill| %>
+		               <%= skill.skill_name %>
+	            	<% end %>
+	            <% else %>
+	            	<h5> </h5>
+	            <% end %>
+   	            <p><a href="<%= chatroom_path(chatuser[:chatroom_id]) %>">チャットをする</a></p>
+	          </div>
+	      </li>
+	    <% end %>
+	    </ul>
+  </div>
+</section>
+
+
+

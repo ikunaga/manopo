@@ -1,9 +1,16 @@
-<h4>Chat room</h4>
+<div style="margin-top: 60px; margin-left: 100px;">
 
-<div id="messages" data-room_id="<%= @room.id %>">
-  <%= render @messages %>
+	<h3>チャットルーム</h3>
+
+	<div id="messages" data-room_id="<%= @room.id %>" style="margin-top: 50px;">
+	  <%= render @messages %>
+	</div>
+
+
+	<div class="clearfix" style="margin-top: 50px; margin-left: 200px; float: none;">
+		<%= text_field nil, @room.id, 'data-behavior': 'chat_speaker' %>
+		<%= label nil, nil, 'コメントを入力してEnterキーをクリックしてください' %>
+	</div>
 </div>
 
 
-<%= label nil, nil, 'Say something:' %>
-<%= text_field nil, @room.id, 'data-behavior': 'chat_speaker' %>

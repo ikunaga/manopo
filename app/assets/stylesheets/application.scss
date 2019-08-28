@@ -32,9 +32,9 @@
 	padding: 0px;
 }
 
-
-.follow {
-	width: 50px;
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
 }
-
 

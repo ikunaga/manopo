@@ -1,27 +1,29 @@
+<div style="margin-top: 50px; text-align: center;">
+	<%= form_for(@skill) do |f| %>
+	    <div>
+	        <h3>スキル追加</h2>
+		    <%= f.text_field :skill_name %>
+	    </div>
 
-<%= form_for(@skill) do |f| %>
-    <div>
-        <h4>スキル</h4>
-	    <%= f.text_field :skill_name %>
-    </div>
+	    <div style="margin-top: 20px;">
+		    <h4>カテゴリーを選択</h4>
+		    <%= f.collection_select :category_id, Category.all, :id, :category_name %>
+		</div>
 
-    <div>
-	    <h4>カテゴリーを選択</h4>
-	    <%= f.collection_select :category_id, Category.all, :id, :category_name %>
-	</div>
-
-	<div>
-		<%= f.submit "追加する" %>
-	</div>
-<% end %>
-
-
-<p>現在登録されているスキル</p>
-<div>
-
-	<% @skills.each do |skill| %>
-	<%= skill.skill_name %>
-	<%= link_to "削除", skill_path(skill), method: :delete %>
+		<div>
+			<%= f.submit "追加する" %>
+		</div>
 	<% end %>
 
+
+	<p>現在登録されているスキル</p>
+	<div>
+
+		<% @skills.each do |skill| %>
+			<%= skill.skill_name %>
+			<%= link_to "削除", skill_path(skill), method: :delete %>
+			<p><h5><カテゴリ><%= skill.category.category_name %></h5></p>
+		<% end %>
+
+	</div>
 </div>
