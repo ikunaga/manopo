@@ -1,0 +1,29 @@
+current directory: /var/www/html/manopo/vendor/bundle/ruby/2.4/gems/unicorn-5.5.1/ext/unicorn_http
+/usr/bin/ruby2.4 -r ./siteconf20190908-2474-h7u3ve.rb extconf.rb
+checking for SIZEOF_OFF_T in ruby.h... yes
+checking for SIZEOF_SIZE_T in ruby.h... yes
+checking for SIZEOF_LONG in ruby.h... yes
+checking for rb_str_set_len() in ruby.h... yes
+checking for rb_hash_clear() in ruby.h... yes
+checking for gmtime_r() in time.h... yes
+checking if String#-@ (str_uminus) dedupes... no, needs Ruby 2.5+
+checking if Hash#[]= (rb_hash_aset) dedupes... no, needs Ruby 2.6+
+creating Makefile
+
+current directory: /var/www/html/manopo/vendor/bundle/ruby/2.4/gems/unicorn-5.5.1/ext/unicorn_http
+make "DESTDIR=" clean
+rm -f 
+rm -f unicorn_http.so  *.o  *.bak mkmf.log .*.time
+
+current directory: /var/www/html/manopo/vendor/bundle/ruby/2.4/gems/unicorn-5.5.1/ext/unicorn_http
+make "DESTDIR="
+gcc -I. -I/usr/include/ruby/2.4 -I/usr/include/ruby/2.4/ruby/backward -I/usr/include/ruby/2.4 -I. -DHAVE_RB_STR_SET_LEN -DHAVE_RB_HASH_CLEAR -DHAVE_GMTIME_R    -DSTR_UMINUS_DEDUPE=0  -DHASH_ASET_DEDUPE=0  -fPIC -O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector --param=ssp-buffer-size=4 -mtune=generic -fPIC -m64 -o httpdate.o -c httpdate.c
+gcc -I. -I/usr/include/ruby/2.4 -I/usr/include/ruby/2.4/ruby/backward -I/usr/include/ruby/2.4 -I. -DHAVE_RB_STR_SET_LEN -DHAVE_RB_HASH_CLEAR -DHAVE_GMTIME_R    -DSTR_UMINUS_DEDUPE=0  -DHASH_ASET_DEDUPE=0  -fPIC -O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector --param=ssp-buffer-size=4 -mtune=generic -fPIC -m64 -o unicorn_http.o -c unicorn_http.c
+rm -f unicorn_http.so
+gcc -shared -o unicorn_http.so httpdate.o unicorn_http.o -L. -L/usr/lib64 -L. -fstack-protector -rdynamic -Wl,-export-dynamic -m64  -m64  -L/usr/lib64/ruby/2.4/ -L/usr/lib64/ruby/2.4/ -lruby  -lpthread -ldl -lcrypt -lm   -lc
+
+current directory: /var/www/html/manopo/vendor/bundle/ruby/2.4/gems/unicorn-5.5.1/ext/unicorn_http
+make "DESTDIR=" install
+/bin/mkdir -p . ./.gem.20190908-2474-1okxp92
+exit > .sitearchdir.time
+/usr/bin/install -c -m 0755 unicorn_http.so ./.gem.20190908-2474-1okxp92

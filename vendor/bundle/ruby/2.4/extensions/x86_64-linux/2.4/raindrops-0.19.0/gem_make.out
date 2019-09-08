@@ -1,0 +1,95 @@
+current directory: /var/www/html/manopo/vendor/bundle/ruby/2.4/gems/raindrops-0.19.0/ext/raindrops
+/usr/bin/ruby2.4 -r ./siteconf20190908-2474-1eqsaba.rb extconf.rb
+checking for mmap() in sys/mman.h... yes
+checking for munmap() in sys/mman.h... yes
+checking for mremap() in sys/mman.h... yes
+checking for linux/tcp.h... yes
+checking for struct tcp_info in sys/types.h,netdb.h,string.h,sys/socket.h,netinet/in.h,linux/tcp.h... yes
+checking for struct tcp_info.tcpi_state in sys/types.h,netdb.h,string.h,sys/socket.h,netinet/in.h,linux/tcp.h... yes
+checking for struct tcp_info.tcpi_ca_state in sys/types.h,netdb.h,string.h,sys/socket.h,netinet/in.h,linux/tcp.h... yes
+checking for struct tcp_info.tcpi_retransmits in sys/types.h,netdb.h,string.h,sys/socket.h,netinet/in.h,linux/tcp.h... yes
+checking for struct tcp_info.tcpi_probes in sys/types.h,netdb.h,string.h,sys/socket.h,netinet/in.h,linux/tcp.h... yes
+checking for struct tcp_info.tcpi_backoff in sys/types.h,netdb.h,string.h,sys/socket.h,netinet/in.h,linux/tcp.h... yes
+checking for struct tcp_info.tcpi_options in sys/types.h,netdb.h,string.h,sys/socket.h,netinet/in.h,linux/tcp.h... yes
+checking for struct tcp_info.tcpi_snd_wscale in sys/types.h,netdb.h,string.h,sys/socket.h,netinet/in.h,linux/tcp.h... no
+checking for struct tcp_info.tcpi_rcv_wscale in sys/types.h,netdb.h,string.h,sys/socket.h,netinet/in.h,linux/tcp.h... no
+checking for struct tcp_info.tcpi_rto in sys/types.h,netdb.h,string.h,sys/socket.h,netinet/in.h,linux/tcp.h... yes
+checking for struct tcp_info.tcpi_ato in sys/types.h,netdb.h,string.h,sys/socket.h,netinet/in.h,linux/tcp.h... yes
+checking for struct tcp_info.tcpi_snd_mss in sys/types.h,netdb.h,string.h,sys/socket.h,netinet/in.h,linux/tcp.h... yes
+checking for struct tcp_info.tcpi_rcv_mss in sys/types.h,netdb.h,string.h,sys/socket.h,netinet/in.h,linux/tcp.h... yes
+checking for struct tcp_info.tcpi_unacked in sys/types.h,netdb.h,string.h,sys/socket.h,netinet/in.h,linux/tcp.h... yes
+checking for struct tcp_info.tcpi_sacked in sys/types.h,netdb.h,string.h,sys/socket.h,netinet/in.h,linux/tcp.h... yes
+checking for struct tcp_info.tcpi_lost in sys/types.h,netdb.h,string.h,sys/socket.h,netinet/in.h,linux/tcp.h... yes
+checking for struct tcp_info.tcpi_retrans in sys/types.h,netdb.h,string.h,sys/socket.h,netinet/in.h,linux/tcp.h... yes
+checking for struct tcp_info.tcpi_fackets in sys/types.h,netdb.h,string.h,sys/socket.h,netinet/in.h,linux/tcp.h... yes
+checking for struct tcp_info.tcpi_last_data_sent in sys/types.h,netdb.h,string.h,sys/socket.h,netinet/in.h,linux/tcp.h... yes
+checking for struct tcp_info.tcpi_last_ack_sent in sys/types.h,netdb.h,string.h,sys/socket.h,netinet/in.h,linux/tcp.h... yes
+checking for struct tcp_info.tcpi_last_data_recv in sys/types.h,netdb.h,string.h,sys/socket.h,netinet/in.h,linux/tcp.h... yes
+checking for struct tcp_info.tcpi_last_ack_recv in sys/types.h,netdb.h,string.h,sys/socket.h,netinet/in.h,linux/tcp.h... yes
+checking for struct tcp_info.tcpi_pmtu in sys/types.h,netdb.h,string.h,sys/socket.h,netinet/in.h,linux/tcp.h... yes
+checking for struct tcp_info.tcpi_rcv_ssthresh in sys/types.h,netdb.h,string.h,sys/socket.h,netinet/in.h,linux/tcp.h... yes
+checking for struct tcp_info.tcpi_rtt in sys/types.h,netdb.h,string.h,sys/socket.h,netinet/in.h,linux/tcp.h... yes
+checking for struct tcp_info.tcpi_rttvar in sys/types.h,netdb.h,string.h,sys/socket.h,netinet/in.h,linux/tcp.h... yes
+checking for struct tcp_info.tcpi_snd_ssthresh in sys/types.h,netdb.h,string.h,sys/socket.h,netinet/in.h,linux/tcp.h... yes
+checking for struct tcp_info.tcpi_snd_cwnd in sys/types.h,netdb.h,string.h,sys/socket.h,netinet/in.h,linux/tcp.h... yes
+checking for struct tcp_info.tcpi_advmss in sys/types.h,netdb.h,string.h,sys/socket.h,netinet/in.h,linux/tcp.h... yes
+checking for struct tcp_info.tcpi_reordering in sys/types.h,netdb.h,string.h,sys/socket.h,netinet/in.h,linux/tcp.h... yes
+checking for struct tcp_info.tcpi_rcv_rtt in sys/types.h,netdb.h,string.h,sys/socket.h,netinet/in.h,linux/tcp.h... yes
+checking for struct tcp_info.tcpi_rcv_space in sys/types.h,netdb.h,string.h,sys/socket.h,netinet/in.h,linux/tcp.h... yes
+checking for struct tcp_info.tcpi_total_retrans in sys/types.h,netdb.h,string.h,sys/socket.h,netinet/in.h,linux/tcp.h... yes
+checking for struct tcp_info.tcpi_snd_wnd in sys/types.h,netdb.h,string.h,sys/socket.h,netinet/in.h,linux/tcp.h... no
+checking for struct tcp_info.tcpi_snd_bwnd in sys/types.h,netdb.h,string.h,sys/socket.h,netinet/in.h,linux/tcp.h... no
+checking for struct tcp_info.tcpi_snd_nxt in sys/types.h,netdb.h,string.h,sys/socket.h,netinet/in.h,linux/tcp.h... no
+checking for struct tcp_info.tcpi_rcv_nxt in sys/types.h,netdb.h,string.h,sys/socket.h,netinet/in.h,linux/tcp.h... no
+checking for struct tcp_info.tcpi_toe_tid in sys/types.h,netdb.h,string.h,sys/socket.h,netinet/in.h,linux/tcp.h... no
+checking for struct tcp_info.tcpi_snd_rexmitpack in sys/types.h,netdb.h,string.h,sys/socket.h,netinet/in.h,linux/tcp.h... no
+checking for struct tcp_info.tcpi_rcv_ooopack in sys/types.h,netdb.h,string.h,sys/socket.h,netinet/in.h,linux/tcp.h... no
+checking for struct tcp_info.tcpi_snd_zerowin in sys/types.h,netdb.h,string.h,sys/socket.h,netinet/in.h,linux/tcp.h... no
+checking for TCP_ESTABLISHED in sys/types.h,netdb.h,string.h,sys/socket.h,netinet/in.h,linux/tcp.h... no
+checking for TCPS_ESTABLISHED in sys/types.h,netdb.h,string.h,sys/socket.h,netinet/in.h,linux/tcp.h... no
+checking for TCP_SYN_SENT in sys/types.h,netdb.h,string.h,sys/socket.h,netinet/in.h,linux/tcp.h... no
+checking for TCPS_SYN_SENT in sys/types.h,netdb.h,string.h,sys/socket.h,netinet/in.h,linux/tcp.h... no
+checking for TCP_SYN_RECV in sys/types.h,netdb.h,string.h,sys/socket.h,netinet/in.h,linux/tcp.h... no
+checking for TCPS_SYN_RECEIVED in sys/types.h,netdb.h,string.h,sys/socket.h,netinet/in.h,linux/tcp.h... no
+checking for TCP_FIN_WAIT1 in sys/types.h,netdb.h,string.h,sys/socket.h,netinet/in.h,linux/tcp.h... no
+checking for TCPS_FIN_WAIT_1 in sys/types.h,netdb.h,string.h,sys/socket.h,netinet/in.h,linux/tcp.h... no
+checking for TCP_FIN_WAIT2 in sys/types.h,netdb.h,string.h,sys/socket.h,netinet/in.h,linux/tcp.h... no
+checking for TCPS_FIN_WAIT_2 in sys/types.h,netdb.h,string.h,sys/socket.h,netinet/in.h,linux/tcp.h... no
+checking for TCP_TIME_WAIT in sys/types.h,netdb.h,string.h,sys/socket.h,netinet/in.h,linux/tcp.h... no
+checking for TCPS_TIME_WAIT in sys/types.h,netdb.h,string.h,sys/socket.h,netinet/in.h,linux/tcp.h... no
+checking for TCP_CLOSE in sys/types.h,netdb.h,string.h,sys/socket.h,netinet/in.h,linux/tcp.h... no
+checking for TCPS_CLOSED in sys/types.h,netdb.h,string.h,sys/socket.h,netinet/in.h,linux/tcp.h... no
+checking for TCP_CLOSE_WAIT in sys/types.h,netdb.h,string.h,sys/socket.h,netinet/in.h,linux/tcp.h... no
+checking for TCPS_CLOSE_WAIT in sys/types.h,netdb.h,string.h,sys/socket.h,netinet/in.h,linux/tcp.h... no
+checking for TCP_LAST_ACK in sys/types.h,netdb.h,string.h,sys/socket.h,netinet/in.h,linux/tcp.h... no
+checking for TCPS_LAST_ACK in sys/types.h,netdb.h,string.h,sys/socket.h,netinet/in.h,linux/tcp.h... no
+checking for TCP_LISTEN in sys/types.h,netdb.h,string.h,sys/socket.h,netinet/in.h,linux/tcp.h... no
+checking for TCPS_LISTEN in sys/types.h,netdb.h,string.h,sys/socket.h,netinet/in.h,linux/tcp.h... no
+checking for TCP_CLOSING in sys/types.h,netdb.h,string.h,sys/socket.h,netinet/in.h,linux/tcp.h... no
+checking for TCPS_CLOSING in sys/types.h,netdb.h,string.h,sys/socket.h,netinet/in.h,linux/tcp.h... no
+checking for getpagesize() in unistd.h... yes
+checking for rb_thread_call_without_gvl()... yes
+checking for rb_thread_blocking_region()... no
+checking for rb_thread_io_blocking_region()... yes
+checking for GCC 4+ atomic builtins... yes
+creating extconf.h
+creating Makefile
+
+current directory: /var/www/html/manopo/vendor/bundle/ruby/2.4/gems/raindrops-0.19.0/ext/raindrops
+make "DESTDIR=" clean
+rm -f 
+rm -f raindrops_ext.so  *.o  *.bak mkmf.log .*.time
+
+current directory: /var/www/html/manopo/vendor/bundle/ruby/2.4/gems/raindrops-0.19.0/ext/raindrops
+make "DESTDIR="
+gcc -I. -I/usr/include/ruby/2.4 -I/usr/include/ruby/2.4/ruby/backward -I/usr/include/ruby/2.4 -I. -DRUBY_EXTCONF_H=\"extconf.h\"    -D_GNU_SOURCE  -D_BSD_SOURCE  -fPIC -O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector --param=ssp-buffer-size=4 -mtune=generic -fPIC -m64 -o linux_inet_diag.o -c linux_inet_diag.c
+gcc -I. -I/usr/include/ruby/2.4 -I/usr/include/ruby/2.4/ruby/backward -I/usr/include/ruby/2.4 -I. -DRUBY_EXTCONF_H=\"extconf.h\"    -D_GNU_SOURCE  -D_BSD_SOURCE  -fPIC -O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector --param=ssp-buffer-size=4 -mtune=generic -fPIC -m64 -o raindrops.o -c raindrops.c
+gcc -I. -I/usr/include/ruby/2.4 -I/usr/include/ruby/2.4/ruby/backward -I/usr/include/ruby/2.4 -I. -DRUBY_EXTCONF_H=\"extconf.h\"    -D_GNU_SOURCE  -D_BSD_SOURCE  -fPIC -O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector --param=ssp-buffer-size=4 -mtune=generic -fPIC -m64 -o tcp_info.o -c tcp_info.c
+rm -f raindrops_ext.so
+gcc -shared -o raindrops_ext.so linux_inet_diag.o raindrops.o tcp_info.o -L. -L/usr/lib64 -L. -fstack-protector -rdynamic -Wl,-export-dynamic -m64  -m64  -L/usr/lib64/ruby/2.4/ -L/usr/lib64/ruby/2.4/ -lruby  -lpthread -ldl -lcrypt -lm   -lc
+
+current directory: /var/www/html/manopo/vendor/bundle/ruby/2.4/gems/raindrops-0.19.0/ext/raindrops
+make "DESTDIR=" install
+/bin/mkdir -p . ./.gem.20190908-2474-j6th6s
+exit > .sitearchdir.time
+/usr/bin/install -c -m 0755 raindrops_ext.so ./.gem.20190908-2474-j6th6s
