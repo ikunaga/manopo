@@ -1,24 +1,43 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# ツール・ライブラリの名前
+　「Mano Po(マノポー)」
+ 
+ 
+## サイト概要
+　「仕事を退職した後も培ったスキルや経験を生かしたいと考えている中高年の方」と、「その知識を学びたいと考えている若者」を結びつけるマッチングサイトです。 
+ 
+ 
+***デモ***
 
-Things you may want to cover:
+## AWSデプロイURL
+http://13.113.25.90
+ 
+ 
+## 機能
+- フォロー機能
+- チャット機能
+ 
+ 
+## 使い方
+1. 会員登録ページより、会員登録を行います。
+　　その際に、「シニア（若者に知識を還元したいと考えている方）」か「若者（シニアの知識を学びたいと考えている方）」を選択してください。
 
-* Ruby version
+2. 会員登録が完了したら、本ページ上部のログインフォームからメールアドレスとパスワードを入力してログインします。ログインした後に、マイページ　→　編集ページでスキルを登録してください。トップページに登録したスキルのカテゴリに紐づくユーザーが表示されるので、話したいと思った相手に＜いいね＞をします。
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+3. お互いに＜いいね＞を行った場合、マッチング成立となりメッセージのやりとりができるようになります。
+ 
+ 
+## その他
+ 
+その他その他その他その他
+その他その他その他その他
+その他その他その他その他
+その他その他その他その他
+ 
+## 作者
+ 
+IkunagaMasanao
+mail to: ikmikm802@gmail.com
+ 
+end
