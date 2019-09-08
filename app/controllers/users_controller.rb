@@ -47,7 +47,7 @@ class UsersController < ApplicationController
 
 	def update
 		user = User.find(params[:id])
-		    if user.update(user_params)
+		    if user.update!(user_params)
 			    sign_in(user, bypass: true)
 			    redirect_to user_path(user.id)
 			else

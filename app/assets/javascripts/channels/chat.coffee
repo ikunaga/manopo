@@ -1,5 +1,5 @@
 document.addEventListener 'turbolinks:load', ->
-  App.chat = App.cable.subscriptions.create { channel: "ChatChannel", chatroom_id: $('#messages').data('chatroom_id') },
+  App.chat = App.cable.subscriptions.create { channel: "ChatChannel", chatroom_id: $('#messages').data('room_id') },
   connected: ->
     # Called when the subscription is ready for use on the server
 
@@ -8,7 +8,6 @@ document.addEventListener 'turbolinks:load', ->
 
   received: (data) ->
     $('#messages').append data['chat_message']
-    alert('test')
 
   post: (chat_message, chatroom_id)->
     @perform 'post', chat_message: chat_message, chatroom_id: chatroom_id

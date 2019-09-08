@@ -70,12 +70,10 @@ ActiveRecord::Schema.define(version: 2019_08_27_065201) do
   end
 
   create_table "user_parties", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "party_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id"
-    t.integer "party_id"
-    t.index ["party_id"], name: "index_user_parties_on_party_id"
-    t.index ["user_id"], name: "index_user_parties_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -89,6 +87,7 @@ ActiveRecord::Schema.define(version: 2019_08_27_065201) do
     t.datetime "last_sign_in_at"
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "last_name"
@@ -102,7 +101,6 @@ ActiveRecord::Schema.define(version: 2019_08_27_065201) do
     t.string "phone_number"
     t.boolean "is_deleted"
     t.datetime "deleted_at"
-    t.integer "name"
     t.integer "age_group"
     t.text "introduction"
     t.index ["email"], name: "index_users_on_email", unique: true
