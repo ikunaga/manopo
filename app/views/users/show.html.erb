@@ -45,7 +45,7 @@
 
    	<% if @user == current_user %>
 	    <div>
-			<button type="button" class="btn btn-default" style="width: 100px;"><%= link_to "編集" ,edit_user_path(@user.id) %></button>
+			<%= link_to "編集" ,edit_user_path(@user.id), class: "btn btn-default" %>
 		</div>
 	<% end %>
 
