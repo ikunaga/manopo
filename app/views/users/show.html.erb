@@ -44,8 +44,8 @@
     </div>
 
    	<% if @user == current_user %>
-	    <div>
-			<%= link_to "編集" ,edit_user_path(@user.id), class: "btn btn-default" %>
+	    <div style="width: 700px; margin-left: 200px;">
+			<%= link_to "ユーザー情報を編集する" ,edit_user_path(@user.id), class: 'btn btn-primary btn-block' %>
 		</div>
 	<% end %>
 

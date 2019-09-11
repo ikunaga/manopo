@@ -90,18 +90,19 @@
 
       <% end %>
 
-
-<p>現在登録されているスキル</p>
-<div>
-
-  <% @user.skills.each do |skill| %>
-  <%= skill.skill_name %>
-  <% end %>
-
+<div style="margin-top: 30px;">
+  <h4>＜現在登録されているスキル＞</h4>
+  <div style="font-size: 20px;">
+    <% @user.skills.each do |skill| %>
+      <span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>　<%= skill.skill_name %>
+      <span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
+    <% end %>
+  </div>
 </div>
 
-<p><%= link_to "スキルを追加する" ,new_skill_path %></p>
-
+<div style="text-align: center; font-size: 20px; width: 200px; margin: auto; margin-top: 50px; padding-top: 5px;">
+  <%= link_to "スキルを追加する" ,new_skill_path ,class: 'btn btn-primary btn-block' %></p>
+</div>
 
     </div>
   </div>

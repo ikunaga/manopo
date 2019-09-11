@@ -1,8 +1,5 @@
 <%= flash.now[:alert] %>
 
-
-
-
 <div  class="index clearfix" style="width: 200px; height: 100%; float: left; margin-right: 30px; border-right: 2px solid black; padding-top: 20px; background-color: #f5f5f5; position: fixed; margin-top: 40px;">
 	<div style="margin-top: 50px;">
 		<h4 style="text-align: center;">サイト利用の心得</h4>
@@ -25,6 +22,17 @@
 <div class="divimage2" style="text-align: center; width: 100%; background-position: center; background-size: contain; height: 250px;">
 </div>
 
+<% if current_user.skills == [] %>
+	<div class="clearfix" style="padding-left: 500px; color: red; border: red solid 1px;">
+		<h4>まずはスキルを登録してください。<br>
+			スキルを追加すると、そのカテゴリに紐付いたユーザーが表示されます。<br>
+		    ＜スキル追加方法＞<br>
+		     １、右上の「マイページボタン」をクリック<br>
+		     ２、マイページ下部の「ユーザー情報を編集する」ボタンをクリック<br>
+		     ３、編集ページ下部の「スキルを追加」をクリック<br>
+		     ４、カテゴリを選択の上、ご自身のスキルの詳細を登録してください</h4>
+	</div>
+<% end %>
 
 <section class="our-webcoderskull padding-lg">
   <div class="container" style="float: left; margin-left: 200px;">
@@ -35,13 +43,14 @@
     </div>
 	    <ul class="row">
 	    <% @users.each do |users| %>
+	    <a href="<%= user_path(users.id) %>">
 	      <li class="col-12 col-md-6 col-lg-3" style="position: static;">
 	          <div class="clearfix cnt-block equal-hight" style="height: 350px;">
 	            <figure><img src="<%= attachment_url(users, :image, :fill, 600, 600) %>"></figure>
-	            <h3><a href="<%= user_path(users.id) %>"><%= users.first_name %> <%= users.last_name %></a></h3>
+	            <h3><%= users.first_name %> <%= users.last_name %></h3>
 
         		<% if current_user.age_group == '若者' %>
-		            <h5>保有スキル</h5>
+		            <h5 style="color: navy;">保有スキル</h5>
 		            <% users.skills.each do |skill| %>
 		               <%= skill.skill_name %>
 		            <% end %>
@@ -55,6 +64,7 @@
 	            <% end %>
 	          </div>
 	      </li>
+	  </a>
 	    <% end %>
 	    </ul>
   </div>
