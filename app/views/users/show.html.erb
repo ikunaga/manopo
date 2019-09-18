@@ -43,18 +43,19 @@
 		<%= render "relationships/follow_button", user: @user %>
     </div>
 
-    <div class="clearfix">
-    	<h3>あなたがいいねしたユーザー</h3>
-    	<% @user.followers.each do |f| %>
-    	<div class="clearfix" style="float: left; padding-left: 10px; margin-top: 20px;">
-    		<img src="<%= attachment_url(f, :image, :fill, 100, 100) %>" style="border-radius: 100px;">
-    		<p><%= f.first_name %> <%= f.last_name %>さん</p>
-    	</div>
-    	<% end %>
-    </div>
+	<% if @user == current_user %>
+	    <div class="clearfix">
+	    	<h3>あなたがいいねしたユーザー</h3>
+	    	<% @user.followers.each do |f| %>
+	    	<div class="clearfix" style="float: left; padding-left: 10px; margin-top: 20px;">
+	    		<a href="<%= user_path(f.id) %>">
+	    		<img src="<%= attachment_url(f, :image, :fill, 100, 100) %>" style="border-radius: 100px;"></a>
+	    		<p><%= f.first_name %> <%= f.last_name %>さん</p>
+	    	</div>
+	    	<% end %>
+	    </div>
 
-   	<% if @user == current_user %>
-	    <div class="clearfix" style="width: 700px; margin-left: 200px; margin-top: 20px;">
+		<div class="clearfix" style="width: 700px; margin-left: 200px; margin-top: 20px;">
 			<%= link_to "ユーザー情報を編集する" ,edit_user_path(@user.id), class: 'btn btn-primary btn-block' %>
 		</div>
 	<% end %>
