@@ -16,7 +16,7 @@
 http://13.113.25.90
  
 ## スチール
-https://user-images.githubusercontent.com/51260304/65322742-988d4e00-dbe2-11e9-8487-8edcddd08b79.png
+（https://user-images.githubusercontent.com/51260304/65322742-988d4e00-dbe2-11e9-8487-8edcddd08b79.png）
  
 ## 機能
 - フォロー機能
