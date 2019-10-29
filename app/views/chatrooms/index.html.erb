@@ -4,7 +4,7 @@
 	<h3>チャットルーム一覧</h3>
 	  <ul style="padding-left: 20px; font-size: 30px;">
 	    <% @rooms.each do |room| %>
-	      <li><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span><%= link_to "ROOM#{room.id}", chatroom_path(room) %></li>
+	      <li><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span><%= link_to "チャットルームへ", chatroom_path(room) %></li>
 	      <li>　　<%= room.users.where.not(id:current_user.id).pluck(:first_name)[0] %>さんとのチャットルーム</li>
 	    <% end %>
 	  </ul>

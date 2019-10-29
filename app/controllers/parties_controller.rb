@@ -5,7 +5,6 @@ class PartiesController < ApplicationController
 	end
 
 	def create
-		binding.pry
 		party = Party.new(party_params)
 		party.organizer_user_id = current_user.id
 		if party.save!

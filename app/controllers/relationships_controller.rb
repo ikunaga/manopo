@@ -37,11 +37,6 @@ class RelationshipsController < ApplicationController
     if following.destroy
       flash[:success] = 'ユーザーのフォローを解除しました'
       redirect_to user
-      # user = User.find(params[:follow_id])
-      # if user.chatroom_users.room_id = current_user.chatroom_users.room_id
-      #     chatroom = Chatroom.where(id: current_user.chatroom_users.room_id)
-      #     chatroom.destroy
-      # end
     else
       flash.now[:alert] = 'ユーザーのフォロー解除に失敗しました'
       redirect_to user

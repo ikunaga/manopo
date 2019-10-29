@@ -81,32 +81,30 @@
            「チャットをする」をクリックし、チャットを開始してください。</p>
     </div>
 	    <ul class="row">
-	    <% @chatroom_with_follower.each do |chatuser| %>
-	    <a href="<%= user_path(chatuser[:follower_user]) %>">
-	      <li class="col-12 col-md-6 col-lg-3" style="position: static;">
-	          <div class="cnt-block equal-hight" style="height: 349px;">
-	            <figure><img src="<%= attachment_url(chatuser[:follower_user], :image, :fill, 600, 600) %>"></figure>
-	            <h3><%= chatuser[:follower_user].first_name %> <%= chatuser[:follower_user].last_name %></h3>
+		<% current_user.matchers.each do |matcher| %>
+		    <a href="<%= user_path(matcher) %>">
+		      <li class="col-12 col-md-6 col-lg-3" style="position: static;">
+		          <div class="cnt-block equal-hight" style="height: 349px;">
+		            <figure><img src="<%= attachment_url(matcher, :image, :fill, 600, 600) %>"></figure>
+		            <h3><%= matcher.first_name %> <%= matcher.last_name %></h3>
 
-        		<% if current_user.age_group == '若者' %>
-		            <h5>保有スキル</h5>
-		            <% chatuser[:follower_user].skills.each do |skill| %>
-		               <%= skill.skill_name %>
-	            	<% end %>
+	        		<% if current_user.age_group == '若者' %>
+			            <h5>保有スキル</h5>
+			            <% matcher.skills.each do |skill| %>
+			               <%= skill.skill_name %>
+		            	<% end %>
 
-		        <% elsif current_user.age_group == 'シニア' %>
-		        	<h5>興味のあるスキル</h5>
-		            <% chatuser[:follower_user].skills.each do |skill| %>
-		               <%= skill.skill_name %>
-	            	<% end %>
-	            <% else %>
-	            	<h5> </h5>
-	            <% end %>
-
-   	            <object><p><a href="<%= chatroom_path(chatuser[:chatroom_id]) %>" style="color: orange;">チャットをする</a></p></object>
-	          </div>
-	      </li>
-	    </a>
+			        <% elsif current_user.age_group == 'シニア' %>
+			        	<h5>興味のあるスキル</h5>
+			            <% matcher.skills.each do |skill| %>
+			               <%= skill.skill_name %>
+		            	<% end %>
+		            <% else %>
+		            	<h5> </h5>
+		            <% end %>
+		          </div>
+		      </li>
+		    </a>
 	    <% end %>
 	    </ul>
   </div>

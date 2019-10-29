@@ -29,13 +29,13 @@ class UsersController < ApplicationController
 			flash.now[:alert] = 'ユーザーの年齢層を設定してください'
 			render :index
 		end
-
-
 	end
 
 	def show
 		@user = User.find(params[:id])
 		@skill = Skill.where(user_id: @user.id)
+		@following = Relationship.where(user_id: @user.id)
+		@follow_user = Relationship.where(follow_id: @user.id)
 	end
 
 	def edit
